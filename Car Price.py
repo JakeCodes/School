@@ -9,7 +9,7 @@ destinationCharge = float(input("destination charge: "))
 
 const = 1.1245
 
-total = round((tax + license + dealerPrep + destinationCharge + basePrice)* const)
+total = round((tax + license + dealerPrep + destinationCharge + basePrice) * const)
 
 print(total)
 
