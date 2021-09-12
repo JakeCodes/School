@@ -1,17 +1,38 @@
-# base price
-basePrice = float(input("What is your base car price? "))
+# Challenge
 
-# additional charges
-tax = float(input("tax: "))
-license = float(input("license: "))
-dealerPrep = float(input("dealer prep: "))
-destinationCharge = float(input("destination charge: "))
+# Write a Car Salesman program where the user enters the base price of a car.
+# The program should add on a bunch of EXTRA fees such as tax, license,
+# dealer prep and a destination charge.
+# The other fees should be set values (constants).
+# Display the actual price of the car once all the extras are applied.
 
-const = 1.1245
 
-total = round((tax + license + dealerPrep + destinationCharge + basePrice) * const)
+from random import randrange
 
-print(total)
+while True:
+    try:
+        basePrice = float(input("what is the base price of your car? "))
+        break
+    except:
+        pass
 
-## exit
-input("Press enter to exit\n")
+tax = 0.08
+license = 51.75
+dealerPrep = randrange(0, 75)
+destCharge = randrange(1000, 1500)
+
+const = 0.125
+
+total = (license + dealerPrep + destCharge) + \
+    round(tax * basePrice) + (const * basePrice) + basePrice
+
+print(
+    f"""
+tax: {tax*basePrice}
+license plate cost: {license}
+dealer prep: {dealerPrep}
+destination charge: {destCharge}
+
+total: {round(total)}
+    """
+)
