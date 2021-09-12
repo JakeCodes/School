@@ -21,10 +21,11 @@ license = 51.75
 dealerPrep = randrange(0, 75)
 destCharge = randrange(1000, 1500)
 
-const = 0.125
+const1 = 52
+const2 = 18
 
 total = (license + dealerPrep + destCharge) + \
-    round(tax * basePrice) + (const * basePrice) + basePrice
+    round(tax * basePrice) + (const1 + const2) + basePrice
 
 print(
     f"""
